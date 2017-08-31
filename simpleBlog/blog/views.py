@@ -12,7 +12,7 @@ def post_list(request):
     """所有已发布文章"""
 
     postsAll = Post.objects.filter(published_date__isnull=False).order_by('-published_date')
-    paginator = Paginator(postsAll, 2)  # Show 10 contacts per page
+    paginator = Paginator(postsAll, 10)  # Show 10 contacts per page
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)
@@ -27,7 +27,7 @@ def post_list(request):
 
 def post_draft_list(request):
     postsAll = Post.objects.filter(published_date__isnull=True).order_by('-created_date')
-    paginator = Paginator(postsAll, 2)  # Show 10 contacts per page
+    paginator = Paginator(postsAll, 10)  # Show 10 contacts per page
     page = request.GET.get('page')
     try:
         posts = paginator.page(page)

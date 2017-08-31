@@ -1,5 +1,5 @@
 {% load staticfiles %}
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <!-- Latest compiled and minified CSS -->
@@ -17,7 +17,7 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     {% block header %}
     {% endblock %}
-    <title>这是一个简单的django博客</title>
+    <title>这是一个简单的django博客Demo</title>
 </head>
 <body class="customize-support">
     <div class="page-header">
@@ -30,7 +30,7 @@
         <h1><a href="{% url 'blog_post_list' %}">简易django BLog</a></h1>
     </div>
     <div id="navigation">
-
+       
     </div>
     {% block content %}
     {% endblock %}
